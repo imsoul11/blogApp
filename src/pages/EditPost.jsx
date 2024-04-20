@@ -2,6 +2,7 @@ import React,{useEffect,useState} from "react";
 import {Container,PostForm} from '../components'
 import storageService from "../appwrite/ConfigDatabase";
 import { useNavigate,useParams } from "react-router-dom";
+import Loaderv from "../components/Loaderv";
 
 
 
@@ -9,6 +10,7 @@ function EditPost() {
     const [post,setPosts] = useState(null)
     const {slug} = useParams()
     const navigate = useNavigate()
+    const [loader,setLoader]= useState(true)
      useEffect(()=>{
         if(slug)
         {
@@ -16,7 +18,9 @@ function EditPost() {
                 if(post)
                 {
                     setPosts(post)
+                    setLoader(false)
                 }
+
             })
         } else{
             navigate('/')
@@ -29,7 +33,7 @@ function EditPost() {
                 <PostForm post={post}/>
             </Container>
         </div>
-     ):null
+     ):<Loaderv/>
   
 }
 

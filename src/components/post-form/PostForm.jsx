@@ -1,10 +1,12 @@
-import React ,{useCallback, useEffect} from 'react'
+import React ,{useCallback, useEffect, useState} from 'react'
 import { useForm } from 'react-hook-form'
 import {Button,Input,Select,RTE} from '..'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import storageService from '../../appwrite/ConfigDatabase'
 export default function PostForm({post}) {
+  
+    
     const {register,handleSubmit,watch,setValue,control,getValues}=useForm({
         defaultValues:{
             title:post?.title || '',
@@ -15,6 +17,8 @@ export default function PostForm({post}) {
     })
     const navigate = useNavigate()
     const userData = useSelector(state=> state.auth.userData)
+    
+    
     const submit = async (data) => {
     if (post) {
         const file = data.image[0] ? await storageService.uploadFile(data.image[0]) : null;
@@ -69,6 +73,8 @@ export default function PostForm({post}) {
           subscription.unsubscribe()
         
     },[watch,slugTransform,setValue])
+
+   
     
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
@@ -88,7 +94,7 @@ export default function PostForm({post}) {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
                 />
-                <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
+                <RTE label="Content :" name="content" control={control} defaultvalue={getValues("content")}  />
             </div>
             <div className="w-1/3 px-2">
                 <Input
@@ -119,4 +125,5 @@ export default function PostForm({post}) {
             </div>
         </form>  
   )
+
 }
