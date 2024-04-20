@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import LogoImg from '../../obj/Logoimage/Logo.png';
 
-function Logo({width="100px"}) {
+function Logo({ width = "50px" }) {
   return (
-    <div>Logo</div>
-  )
+    <img src={LogoImg} alt="Logo" style={{ width:'' ,borderRadius:'50px',height:'50px'}} />
+  );
 }
 
-export default Logo
+export default Logo;

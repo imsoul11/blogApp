@@ -35,27 +35,34 @@ function Header() {
     }
   ]
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className=' shadow bg-blue-900'>
       <Container>
         <nav className='flex'>
-          <div className='mr-4 '>
+          <div className='mr-4 py-1 '>
             <Link t='/'>
               <Logo width='70px'/>
             </Link>
           </div>
           <ul className='flex ml-auto'>
-             {navItems.map((item)=>
-               item.active ? (<li key={item.name}>
-                   <button className='inline-block px-6 py-2 duration-200 hover:bg-blue-100 rounded-full' onClick={()=>navigate(item.slug)}>{item.name}</button>
-               </li>
-               ) :null
-             )}
-             {authStatus && (
-              <li>
-                <LogoutBtn/>
-              </li>
-             )}
-          </ul>
+  {navItems.map((item) =>
+    (item.active && item.name !== 'Login') ? (
+      <li key={item.name}>
+        <button className='inline-block px-3 py-2 duration-200 my-1 hover:bg-blue-100 rounded-full mt-2 mb-2 text-blue-50 hover:text-black' onClick={() => navigate(item.slug)}>{item.name}</button>
+      </li>
+    ) : (item.active && item.name === 'Login') ? (
+      <li key={item.name}>
+        <button className='inline-block px-3 py-2 duration-200 my-1 hover:bg-green-100 bg-green-500 rounded-full mt-2 mb-2 text-blue-50 hover:text-black animate-pulse' onClick={() => navigate(item.slug)}>{item.name}</button>
+
+      </li>
+    ) : null
+  )}
+  {authStatus && (
+    <li>
+      <LogoutBtn />
+    </li>
+  )}
+</ul>
+
         </nav>
       </Container>
     </header>

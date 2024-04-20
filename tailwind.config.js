@@ -1,12 +1,19 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+// tailwind.config.js
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '120': '35rem', // 480px
+      },
+      scale: {
+        '105': '1.005',
+      },
+      
+    },
   },
   plugins: [],
 }
-
