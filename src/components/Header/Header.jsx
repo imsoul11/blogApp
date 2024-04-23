@@ -50,19 +50,21 @@ function Header() {
   return (
     <header className=' shadow bg-blue-900'>
       <Container>
-        <nav className='flex'>
-          <div className='mr-4 py-1 '>
+        <nav className='flex justify-between'>
+        { screenWidth>'420' && 
+          <div className='ml-2 py-1 '>
           
             <div className=''>
-              { screenWidth>'420' && 
+              
                 <Link t='/'>
                 <Logo width='70px'/>
                 </Link>
-              }
+              
             
             </div>
           </div>
-          <ul className='flex ml-auto'>
+        }
+          <ul className='flex items-center ml-5'>
   {navItems.map((item) =>
     (item.active && item.name !== 'Login') ? (
       <li key={item.name}>
