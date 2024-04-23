@@ -8,8 +8,8 @@ function Postcard({ $id, title, featuredImage, content }) {
 
   return (
     <Link to={`/post/${$id}`}>
-      <div className='w-full flex bg-gray-200 justify-between shadow-xl rounded-lg p-4  transition-all hover:shadow-2xl'>
-        <div className='w-56 justify-center mr-4 rounded-lg' style={{ backgroundImage: `url(${blurimg})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'opacity 200ms ease-in-out' }}>
+      <div className=' flex flex-col justify-center text-center items-center bg-gray-200 shadow-xl rounded-lg p-4  transition-all hover:shadow-2xl h-50'>
+        <div className=' rounded-lg' style={{ backgroundImage: `url(${blurimg})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'opacity 200ms ease-in-out' }}>
           {imageSrc && (
             <img
               src={imageSrc}
@@ -20,8 +20,8 @@ function Postcard({ $id, title, featuredImage, content }) {
             />
           )}
         </div>
-        <div className='flex flex-col w-full ml-4'>
-          <h2 className='text-xl font-semibold text-gray-700 w-3/4 '>{title}</h2>
+        <div className='flex flex-col items-center justify-center m-2'>
+          <h2 className='text-xl font-semibold text-gray-700  '>{title}</h2>
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
       </div>

@@ -44,11 +44,11 @@ function Home() {
         
          (
             
-            <div className='w-full py-8'>
+            <div className='w-full flex flex-wrap py-8'>
                 <Container>
-                    <div className='flex flex-wrap' style={{ transition: 'opacity 1s', opacity: 1 , transitionDuration: 1}}>
+                    <div className='flex flex-wrap justify-center' style={{ transition: 'opacity 1s', opacity: 1 , transitionDuration: 1}}>
                         {posts.map((post) => (
-                            <div key={post.$id} className='p-2 w-full' >
+                            <div key={post.$id} className='p-2 w-81' >
                                 <PostCard {...post} />
                             </div>
                         ))}
