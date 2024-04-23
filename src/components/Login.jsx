@@ -38,7 +38,7 @@ function Login() {
         <>
             
             <VideoBackground />
-            <div className="absolute left-120 top-16 inset-0 flex items-center justify-center">
+            <div className="absolute top-16 inset-0 flex items-center justify-center">
                 <div className="w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10">
                     <div className="mb-2 flex justify-center">
                         <span className="inline-block w-full max-w-[100px]">

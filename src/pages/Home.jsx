@@ -34,7 +34,14 @@ function Home() {
             //         </div>
             //     </Container>
             // </div>
-            <VideoBackground/>
+            <>
+            <div className="relative w-full h-screen overflow-hidden flex justify-center items-center">
+    <p className="absolute top-72 mr-56 text-white font-bold text-4xl animate-pulse z-10">
+        Login to see posts
+    </p>
+    <VideoBackground/>
+</div>
+</>
         )
     }
     else {

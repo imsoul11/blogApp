@@ -51,7 +51,7 @@ function Header() {
     <header className=' shadow bg-blue-900'>
       <Container>
         <nav className='flex justify-between'>
-        { screenWidth>'420' && 
+        { screenWidth>'460' && 
           <div className='ml-2 py-1 '>
           
             <div className=''>
