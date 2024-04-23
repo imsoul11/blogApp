@@ -64,7 +64,7 @@ function Header() {
             </div>
           </div>
         }
-          <ul className='flex items-center ml-5'>
+          <ul className='flex items-center ml-7'>
   {navItems.map((item) =>
     (item.active && item.name !== 'Login') ? (
       <li key={item.name}>
