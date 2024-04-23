@@ -34,7 +34,14 @@ function Home() {
             //         </div>
             //     </Container>
             // </div>
-            <VideoBackground/>
+            <>
+            <div className="relative w-full h-screen overflow-hidden flex justify-center items-center">
+    <p className="absolute top-72 mr-56 ml-4 text-white font-bold text-4xl animate-pulse z-10">
+        Login to see posts
+    </p>
+    <VideoBackground/>
+</div>
+</>
         )
     }
     else {
@@ -44,11 +51,11 @@ function Home() {
         
          (
             
-            <div className='w-full py-8'>
+            <div className='w-full flex flex-wrap py-8'>
                 <Container>
-                    <div className='flex flex-wrap' style={{ transition: 'opacity 1s', opacity: 1 , transitionDuration: 1}}>
+                    <div className='flex flex-wrap justify-center' style={{ transition: 'opacity 1s', opacity: 1 , transitionDuration: 1}}>
                         {posts.map((post) => (
-                            <div key={post.$id} className='p-2 w-full' >
+                            <div key={post.$id} className='p-2 w-81' >
                                 <PostCard {...post} />
                             </div>
                         ))}
